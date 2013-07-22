@@ -1,0 +1,102 @@
+<!DOCTYPE HTML>
+<html lang="en">
+	<head>
+		<title>js-reusable-input | Lab | John Shammas</title>
+		<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+		<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+		
+		<link href='http://fonts.googleapis.com/css?family=Raleway:300,600' rel='stylesheet' type='text/css'>
+		<link href="../site/bootstrap.min.css" rel="stylesheet" type="text/css" />
+		<link href="../site/style.css" rel="stylesheet" type="text/css" />
+		
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js" type="text/javascript"></script>
+		<script src="jquery.js-reusable-input.min.js" type="text/javascript"></script>
+		<script>
+			$(document).ready(function(){
+				$("#input1").reusableInput();
+				$("#input2").reusableInput({ blur: false });
+				$("#input3").reusableInput({ blurColor: "#FA715F" });
+				$("#input4").reusableInput({ caretPosition: 4, blur: false });
+				$("#input5").reusableInput({ once: true });
+			});
+		</script>
+	</head>
+	<body class="single">
+		<header>
+			<div class="container">
+				<nav>
+					<a id="logo" href="/"></a>
+					<a href="/">&#8592; Back</a>
+				</nav>
+				<h1>js-reusable-input <a class="primary download" href="https://github.com/jjshammas/lab"><span>Download on</span> GitHub</a></h1>
+			</div>
+		</header>
+		<div class="container">
+			<h3>Enhance access to commonly-used text fields</h3>
+			<p>This lightweight jQuery plugin makes it easy to overwrite current text in an input without a double-click or select-all. However, the user can still regain normal functionality and edit the previously entered text if necessary.</p>
+			<h4>Default implementation</h4>
+			<div class="row">
+				<div class="span6">
+					<pre>$("#search-field").reusableInput();</pre>
+					<p>Click and the caret is set to the beginning of the input. Click again and default functionality is resumed.</p>
+				</div>
+				<div class="span6">
+					<input type="text" value="Test me, I'm an input" id="input1" />
+				</div>
+			</div>
+			<h4>Disable/modify blur</h4>
+			<div class="row">
+				<div class="span6">
+					<pre>$("#search-field").reusableInput({
+	blur: false
+});</pre>
+					<p>Caret will still be moved, input will not change color</p>
+				</div>
+				<div class="span6">
+					<input type="text" value="previous search query here" id="input2" />
+				</div>
+			</div>
+			<div class="row">
+				<div class="span6">
+					<pre>$("#search-field").reusableInput({
+	blurColor: "#FA715F"
+});</pre>
+				</div>
+				<div class="span6">
+					<input type="text" value="previous search query here" id="input3" style="margin-top: 14px;" />
+				</div>
+			</div>
+			<h4>Custom caret position</h4>
+			<div class="row">
+				<div class="span6">
+					<pre>$("#search-field").reusableInput({
+	caretPosition: 4,
+	blur: false
+});</pre>
+					<p>Useful for navigating through directories, URLs, etc.</p>
+				</div>
+				<div class="span6">
+					<input type="text" value="www.google.com" id="input4" />
+				</div>
+			</div>
+			<h4>One time use</h4>
+			<div class="row">
+				<div class="span6">
+					<pre>$("#search-field").reusableInput({
+	once: true
+});</pre>
+					<p>After the input is blurred, default functionality will take over permanently.</p>
+				</div>
+				<div class="span6">
+					<input type="text" value="balloons" id="input5" />
+				</div>
+			</div>
+		</div>
+		<footer>
+			<div class="container">
+				<p>All resources are licensed under the <a href="http://opensource.org/licenses/MIT">MIT Open Source license</a>.</p>
+				<p class="links"><a href="http://www.johnshammas.com">John Shammas</a><a href="http://www.johnshammas.com/contact">Contact</a></p>
+			</div>
+		</footer>
+	</body>
+</html>
