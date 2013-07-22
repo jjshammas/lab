@@ -39,11 +39,25 @@ header {
 		padding-bottom: 35px;
 	}
 
-	header .download {
+	header .download, header .github {
 		float: right;
 		position: relative;
 		top: 6px;
+		margin-left: 4px;
 	}
+	
+	header .download {
+		background-color: #fff;
+		color: #619fe6;
+	}
+	
+		header .download span {
+			color: #a7caf1;
+		}
+		
+		header .download:hover {
+			background-color: #c8ddf5;
+		}
 
 #logo {
 	background-image: url('logo.png');
